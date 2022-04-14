@@ -1,6 +1,10 @@
+#include <stdio.h>
+
 int removeDuplicates(int* nums, int numsSize){
-    int  i, k, prev, curr = 1;
-    prev = nums[0];
+    int  i = 1;
+    int k = 1;
+    int curr = 0;
+    int prev = nums[0];
     while (i < numsSize){
         curr = nums[i];
         if (prev != curr){ // curr is unique
@@ -11,4 +15,10 @@ int removeDuplicates(int* nums, int numsSize){
         prev = curr;
     }
     return k;
+}
+
+int main(){
+    int a1[9] = {1, 2, 2, 2, 2, 3, 4, 5, 6};
+    printf("%d", removeDuplicates(a1, 9));
+    return 0;
 }
